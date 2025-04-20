@@ -1,256 +1,101 @@
-const shopMapURL = "https://maps.app.goo.gl/NxKxb386GzYMjWkh6";
+const placeId = "ChIJt_yzmnQl4jsR_SfbrNvLKZ0";
+
+const shopMapURL = `https://search.google.com/local/writereview?placeid=${placeId}`;
 
 const reviews = [
-    "Kachins Tailor exceeded all my expectations. The craftsmanship was flawless and the staff was incredibly courteous.",
-    "I’ve tried many tailors, but Kachins Tailor stands out for their precision and timely service. Absolutely brilliant!",
-    "The attention to detail at Kachins Tailor is unmatched. My custom suit fits like a second skin!",
-    "Fantastic experience from start to finish! Kachins Tailor delivers quality tailoring with a smile.",
-    "Kachins Tailor made my vision come true. The outfit turned out better than I imagined!",
-    "Friendly staff, great pricing, and excellent workmanship. Kachins Tailor is now my go-to tailor.",
-    "Impressed by the professional approach and on-time delivery. Kachins Tailor truly cares about customer satisfaction.",
-    "The stitching, design, and fitting were all perfect. Kachins Tailor did a phenomenal job!",
-    "Kachins Tailor has a wonderful team that knows how to bring out the best in any fabric.",
-    "Never had such a smooth tailoring experience. Kachins Tailor made the process effortless and enjoyable.",
-    "I love how they took my measurements and preferences seriously. Kachins Tailor nailed it!",
-    "My traditional outfit turned out stunning thanks to Kachins Tailor’s expertise.",
-    "Kachins Tailor is a gem. Their suggestions and design ideas really enhanced my look.",
-    "Affordable and classy — Kachins Tailor delivers premium results without burning a hole in your pocket.",
-    "They truly live up to their name — Kachins treatment and flawless tailoring!",
-    "Amazing service! Kachins Tailor gave me regular updates and delivered right on schedule.",
-    "My wedding outfit was tailored by Kachins Tailor, and I couldn’t be happier!",
-    "From fabric advice to final fitting, Kachins Tailor made everything easy and enjoyable.",
-    "Highly skilled professionals who take pride in their work. Kachins Tailor is a class apart.",
-    "Kachins Tailor took my basic idea and turned it into a masterpiece. Super satisfied!",
-    "Hands down the best tailoring experience I’ve had. Thank you, Kachins Tailor!",
-    "Kachins Tailor always delivers quality, no matter how big or small the job is.",
-    "I received so many compliments on my outfit. Credit goes to Kachins Tailor!",
-    "Perfect fitting, elegant design, and timely delivery — Kachins Tailor is top-tier.",
-    "The quality of stitching is so good it feels tailor-made — oh wait, it is!",
-    "Kachins Tailor values every customer. You can feel the care in their work.",
-    "Their tailoring made me feel confident and stylish. Kachins Tailor knows what they’re doing!",
-    "Efficient, polite, and great at what they do. I recommend Kachins Tailor to everyone.",
-    "They went above and beyond to ensure I was happy. Kachins Tailor rocks!",
-    "Loved how they handled every detail. Kachins Tailor made me look my best!",
-    "Kachins Tailor combines traditional craftsmanship with modern style — perfect combo.",
-    "I’ve tried others, but I always return to Kachins Tailor. They never disappoint.",
-    "Every stitch is perfectly placed. Kachins Tailor is meticulous and talented.",
-    "Their turnaround time is impressive. My outfit was ready well before the event.",
-    "Customer service was fantastic, and the final product even better!",
-    "Kachins Tailor gives boutique-level service with a personal touch.",
-    "My suit was elegant, comfortable, and made to last. Thank you, Kachins Tailor!",
-    "Professional, punctual, and stylish — Kachins Tailor hits all the right notes.",
-    "They made the whole tailoring process fun and exciting. Highly recommended!",
-    "Can’t believe how good the quality is for the price. Kachins Tailor is unbeatable.",
-    "I’ve received more compliments than ever before. Thanks to Kachins Tailor!",
-    "Kachins Tailor made sure every detail was perfect. Excellent experience.",
-    "So happy with my outfit! Kachins Tailor paid attention to every request I made.",
-    "Tailoring like this is hard to find. Kachins Tailor is a rare find!",
-    "Kachins Tailor has set a new standard for tailoring in this city.",
-    "I needed an urgent delivery and Kachins Tailor pulled it off with ease!",
-    "My family and I have all started going to Kachins Tailor — we’re all fans now.",
-    "Their fabric suggestions and styling tips were incredibly helpful.",
-    "Every time I wear something tailored by Kachins Tailor, I feel amazing.",
-    "My custom blazer was sleek, sharp, and perfectly stitched.",
-    "The fit was so accurate, I didn’t need any alterations!",
-    "Kachins Tailor listens and delivers — simple as that.",
-    "They truly care about their customers. It shows in their service.",
-    "My go-to place for all festive and formal outfits.",
-    "I won’t trust any other tailor after experiencing Kachins Tailor.",
-    "Clean stitching, top-tier fabric, and stylish design. 10/10!",
-    "The entire process was smooth and stress-free.",
-    "Love the trendy styles they suggest — always on point!",
-    "Kachins Tailor understands fashion, not just tailoring.",
-    "Super satisfied with both men’s and women’s outfits.",
-    "From casuals to wedding wear, Kachins Tailor has me covered.",
-    "They know how to make each piece feel special.",
-    "Kachins Tailor brings style, comfort, and affordability together.",
-    "They didn’t just make an outfit — they created confidence.",
-    "My experience with Kachins Tailor was seamless from start to finish.",
-    "They never rush the process — quality comes first.",
-    "Professionalism at its best. Great work by Kachins Tailor!",
-    "The trial fitting was perfect, barely needed changes.",
-    "Kachins Tailor respects your time and values your money.",
-    "They make sure the customer is 100% satisfied.",
-    "Every garment looks and feels luxurious.",
-    "Kachins Tailor has mastered the art of perfect fitting.",
-    "I felt like Kachinsty in my tailored outfit!",
-    "They give personalized recommendations that really help.",
-    "Very courteous staff and excellent quality tailoring.",
-    "Outfit delivered ahead of schedule and looked fantastic!",
-    "They are always up-to-date with fashion trends.",
-    "Even the packaging of the final outfit was neat and premium.",
-    "I wore my outfit with pride — it turned heads!",
-    "Superb designs, classy finish, and great people.",
-    "You can tell they’re passionate about what they do.",
-    "Kachins Tailor gave me full confidence in my outfit.",
-    "Very approachable and transparent with pricing.",
-    "Their craftsmanship speaks for itself — top quality!",
-    "Will definitely be recommending Kachins Tailor to friends and family.",
-    "Extremely impressed with their service and hospitality.",
-    "My ethnic wear never looked better. Thank you, Kachins Tailor!",
-    "I’ve finally found a tailor I can trust completely.",
-    "The process was smooth, and the results were beautiful.",
-    "Their team is creative, talented, and super polite.",
-    "Never had a single issue in all my visits to Kachins Tailor.",
-    "Their designs are modern yet elegant — perfect combo!",
-    "Great atmosphere, skilled professionals, and lovely results.",
-    "Kachins Tailor deserves more than just 5 stars!",
-    "They remember your past orders and preferences — that’s rare.",
-    "Excellent follow-up and communication throughout.",
-    "Kachins Tailor is the gold standard of tailoring.",
-    "I get excited every time I pick up a new piece from them!",
-    "Unmatched service quality and superb fitting!",
-    "Everything they made for me was beyond expectations.",
-    "Kachins Tailor takes pride in every stitch — and it shows.",
-    "From alterations to custom wear, they’ve got you covered.",
-    "They handled last-minute changes professionally and with grace.",
-    "It’s always a pleasure dealing with the Kachins Tailor team.",
-    "They made my outfit dreams come true — no exaggeration.",
-    "Truly tailor-made service, every single time!"
-  ];
-  
+  "Kachins Tailor provides exceptional tailoring services with perfect fitting and excellent craftsmanship. Mr. Kachins attention to detail is unmatched. Highly recommended!",
+  "I've been coming to Kachins Tailor for years. Their precision and quality are consistently outstanding. My clothes always fit perfectly!",
+  "The team at Kachins Tailor transformed my design ideas into reality. The final product exceeded all my expectations!",
+  "Perfect fitting every time! Kachins Tailor understands how to make garments that flatter your body type.",
+  "Fast service without compromising on quality. My outfit was ready before the promised date and looked fantastic.",
+  "The stitching quality at Kachins Tailor is impeccable. You can see the craftsmanship in every detail.",
+  "Excellent value for money. The quality you get is worth much more than what they charge.",
+  "My wedding outfit from Kachins Tailor received countless compliments. They truly know special occasion wear.",
+  "Outstanding customer service. They listen carefully to all requirements and deliver perfect results.",
+  "I trust Kachins Tailor with all my formal wear. Consistently perfect fits and stylish designs."
+];
 
-// Generate a random review
+// Generate and display random review
 const randomReview = reviews[Math.floor(Math.random() * reviews.length)];
 document.getElementById("reviewBox").value = randomReview;
 
-// Auto-copy on load
-navigator.clipboard.writeText(randomReview);
-
-function copyReview() {
-  navigator.clipboard.writeText(randomReview).then(() => {
-    alert("✅ Review copied to clipboard!");
+// Auto-copy function with enhanced feedback
+function copyToClipboard(text) {
+  return new Promise((resolve, reject) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(resolve).catch(reject);
+    } else {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        resolve();
+      } catch (err) {
+        reject(err);
+      }
+      document.body.removeChild(textarea);
+    }
   });
 }
 
-function openShop() {
-  window.open(shopMapURL, "_blank");
+// Auto-copy on page load
+copyToClipboard(randomReview).then(() => {
+  console.log("Review copied to clipboard automatically");
+}).catch(err => {
+  console.error("Auto-copy failed:", err);
+});
+
+// Copy button handler
+function copyReview() {
+  copyToClipboard(randomReview).then(() => {
+    // Visual feedback
+    const copyBtn = document.querySelector('button[onclick="copyReview()"]');
+    const originalText = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    
+    setTimeout(() => {
+      copyBtn.innerHTML = originalText;
+    }, 2000);
+    
+  }).catch(err => {
+    alert("Could not copy automatically. Please select and copy the text manually.");
+    console.error("Copy failed:", err);
+  });
 }
 
+// Open Google Maps review page with enhanced handling
+function openShop() {
+  // First ensure the review is copied
+  copyToClipboard(randomReview).then(() => {
+    // Open Maps in new tab
+    const newWindow = window.open(shopMapURL, '_blank');
+    
+    // Show enhanced instructions
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    const instructions = isMobile 
+      ? `1. In the Google Maps app that opened\n2. Tap "Write a review"\n3. Tap the review box and paste (already copied)\n4. Select your star rating and tap "Post"`
+      : `1. In the new Google Maps tab that opened\n2. Click "Write a review"\n3. Click in the review box and paste (Ctrl+V)\n4. Select your star rating and click "Post"`;
+    
+    alert(`✅ Review copied to clipboard!\n\nPlease:\n${instructions}\n\nThank you for supporting Kachins Tailor!`);
+    
+    // Focus on new window if possible
+    if (newWindow) {
+      setTimeout(() => newWindow.focus(), 500);
+    }
+    
+  }).catch(err => {
+    console.error("Copy failed:", err);
+    window.open(shopMapURL, '_blank');
+    alert("Please manually copy the review text and paste it in Google Maps.");
+  });
+}
 
-// const shopMapURL = "https://maps.app.goo.gl/NxKxb386GzYMjWkh6"; // Replace with your actual map URL
-
-// const reviews = [
-//   "Kachin's Tailor is simply the best! The stitching is flawless, and the fabric quality is outstanding. My suit fits perfectly!",
-//   "I’ve been going to Kachin's Tailor for years, and they never disappoint. Their attention to detail is unmatched.",
-//   "The team at Kachin's Tailor is incredibly skilled. They transformed my vision into a beautifully tailored outfit.",
-//   "Fast, professional, and affordable—Kachin's Tailor is my go-to for all my tailoring needs.",
-//   "I got my wedding suit stitched here, and it was absolutely perfect. Highly recommend Kachin's Tailor!",
-//   "Kachin's Tailor delivers top-notch craftsmanship. The fit and finish of my blazer were impeccable.",
-//   "Friendly staff, excellent service, and high-quality work. Kachin's Tailor is a gem!",
-//   "I had a custom dress made at Kachin's Tailor, and it exceeded all my expectations. Will definitely return!",
-//   "Kachin's Tailor understands style and precision. My outfit turned out better than I imagined.",
-//   "The best tailor in town! Kachin's Tailor pays attention to every little detail.",
-//   "I’m always impressed by Kachin's Tailor’s professionalism and skill. My clothes fit like a dream.",
-//   "Kachin's Tailor made me a custom shirt, and the stitching was perfect. Very satisfied!",
-//   "Great prices, amazing quality. Kachin's Tailor is worth every penny.",
-//   "I trust Kachin's Tailor with all my formal wear—they always deliver excellence.",
-//   "The fitting at Kachin's Tailor was spot-on. I’ve never had such a well-tailored suit before.",
-//   "Kachin's Tailor is reliable, quick, and delivers high-quality work every time.",
-//   "I got three dresses stitched here, and each one was flawless. Highly recommend!",
-//   "Kachin's Tailor’s craftsmanship is outstanding. My outfit got so many compliments!",
-//   "The team at Kachin's Tailor is patient and listens to your needs. Perfect results every time.",
-//   "I’ve tried many tailors, but Kachin's Tailor is by far the best. Their work is precise and elegant.",
-//   "Kachin's Tailor delivered my outfit before the deadline, and it fit perfectly. Amazing service!",
-//   "The fabric selection at Kachin's Tailor is fantastic. I always find something premium.",
-//   "Kachin's Tailor is my first choice for custom tailoring. Never had a bad experience.",
-//   "I got a traditional outfit stitched here, and the embroidery work was breathtaking.",
-//   "Kachin's Tailor’s attention to detail is incredible. My suit was tailored to perfection.",
-//   "The staff at Kachin's Tailor is friendly and knowledgeable. They guide you well.",
-//   "I had a blazer altered here, and it looks brand new. Great job, Kachin's Tailor!",
-//   "Kachin's Tailor is worth the visit. Their work speaks for itself—flawless stitching!",
-//   "I always recommend Kachin's Tailor to my friends. They never disappoint.",
-//   "Kachin's Tailor made my graduation outfit, and it was stunning. Thank you!",
-//   "The best tailoring experience I’ve ever had. Kachin's Tailor is a class apart.",
-//   "Kachin's Tailor understands modern fashion trends and delivers stylish outfits.",
-//   "I got a leather jacket customized here, and the fit was perfect. Highly skilled tailors!",
-//   "Kachin's Tailor is professional, punctual, and delivers high-quality work.",
-//   "I’m extremely happy with my dress from Kachin's Tailor. The fit is just right.",
-//   "Kachin's Tailor offers great value for money. Premium quality at reasonable prices.",
-//   "The stitching at Kachin's Tailor is durable and neat. My clothes last longer because of them.",
-//   "I had a complex design request, and Kachin's Tailor executed it perfectly.",
-//   "Kachin's Tailor is my trusted tailor. They always meet my expectations.",
-//   "I got my entire family’s outfits stitched here, and everyone loved them!",
-//   "Kachin's Tailor’s finishing is impeccable. No loose threads, no imperfections.",
-//   "The team at Kachin's Tailor is patient and ensures customer satisfaction.",
-//   "I had a last-minute order, and Kachin's Tailor delivered without compromising quality.",
-//   "Kachin's Tailor’s work is precise, elegant, and worth every penny.",
-//   "I’ve been a loyal customer for years. Kachin's Tailor never fails to impress.",
-//   "Kachin's Tailor made my bridal outfit, and it was absolutely stunning.",
-//   "The best tailor in the city! Kachin's Tailor’s craftsmanship is unbeatable.",
-//   "I got a waistcoat stitched here, and the detailing was exquisite.",
-//   "Kachin's Tailor is my one-stop shop for all tailoring needs. Always perfect!",
-//   "The fitting session at Kachin's Tailor was thorough and precise.",
-//   "Kachin's Tailor’s turnaround time is impressive. Quick without sacrificing quality.",
-//   "I had a vintage design replicated, and Kachin's Tailor nailed it!",
-//   "Kachin's Tailor is a master of their craft. My outfit was tailored to perfection.",
-//   "I love how Kachin's Tailor pays attention to small details. It makes all the difference.",
-//   "Kachin's Tailor’s customer service is excellent. They make the process smooth.",
-//   "I got a formal suit stitched here, and the fit was impeccable. Highly recommend!",
-//   "Kachin's Tailor is reliable, skilled, and delivers on time. What more could you ask for?",
-//   "I’ve never been disappointed with Kachin's Tailor. Consistent quality every time.",
-//   "Kachin's Tailor’s stitching is durable and neat. My clothes always look premium.",
-//   "I got a custom sherwani made here, and it was breathtaking. Thank you!",
-//   "Kachin's Tailor is the only place I trust for my formal wear. Always perfect!",
-//   "The team at Kachin's Tailor is talented and professional. A pleasure to work with.",
-//   "I had a unique design request, and Kachin's Tailor executed it flawlessly.",
-//   "Kachin's Tailor’s attention to fit and comfort is outstanding.",
-//   "I got my entire wedding party’s outfits stitched here, and everyone was thrilled!",
-//   "Kachin's Tailor’s craftsmanship is top-tier. My blazer fits like it was made for me.",
-//   "The best part about Kachin's Tailor is their consistency. Always high quality.",
-//   "I’ve recommended Kachin's Tailor to so many people, and everyone has loved it.",
-//   "Kachin's Tailor made my daughter’s dress, and it was adorable. Great work!",
-//   "The stitching at Kachin's Tailor is precise and durable. Worth every penny.",
-//   "I had an old suit altered here, and it looks brand new. Amazing job!",
-//   "Kachin's Tailor is my forever tailor. Their work is just unbeatable.",
-//   "I got a traditional outfit stitched here, and the embroidery was stunning.",
-//   "Kachin's Tailor’s team is friendly, skilled, and always delivers excellence.",
-//   "I had a last-minute alteration, and Kachin's Tailor saved the day!",
-//   "Kachin's Tailor’s finishing is flawless. No loose threads, no imperfections.",
-//   "The best tailor I’ve ever been to. Kachin's Tailor is truly exceptional.",
-//   "I got a custom coat made here, and the fit is perfect. Highly recommend!",
-//   "Kachin's Tailor is professional, punctual, and delivers high-quality work.",
-//   "I’m always happy with my outfits from Kachin's Tailor. Consistent excellence.",
-//   "Kachin's Tailor’s attention to detail is what sets them apart. Perfect every time.",
-//   "I had a complex design request, and Kachin's Tailor executed it perfectly.",
-//   "Kachin's Tailor is worth every penny. Their craftsmanship is outstanding.",
-//   "I got my entire office’s blazers stitched here, and everyone loved them!",
-//   "Kachin's Tailor’s work is elegant, precise, and stylish. Always impressed.",
-//   "The team at Kachin's Tailor is patient and ensures customer satisfaction.",
-//   "I had a last-minute order, and Kachin's Tailor delivered without any issues.",
-//   "Kachin's Tailor is my trusted tailor for all occasions. Never disappoints.",
-//   "I got a custom kurta stitched here, and the embroidery was beautiful.",
-//   "Kachin's Tailor’s stitching is neat and durable. My clothes always look new.",
-//   "I had a vintage dress replicated, and Kachin's Tailor did an amazing job.",
-//   "Kachin's Tailor is the best in the business. My outfit was perfect.",
-//   "I love how Kachin's Tailor pays attention to small details. It makes a huge difference.",
-//   "Kachin's Tailor’s customer service is excellent. They make tailoring easy.",
-//   "I got a formal shirt stitched here, and the fit was just right. Highly recommend!",
-//   "Kachin's Tailor is reliable, skilled, and always delivers on time.",
-//   "I’ve never had a bad experience here. Kachin's Tailor is consistently great.",
-//   "Kachin's Tailor’s stitching is durable and precise. My clothes last longer.",
-//   "I got a custom gown made here, and it was stunning. Thank you!",
-//   "Kachin's Tailor is the only place I trust for my outfits. Always perfect!",
-//   "The team at Kachin's Tailor is talented and professional. Highly recommended.",
-//   "I had a unique design request, and Kachin's Tailor nailed it!",
-//   "Kachin's Tailor’s attention to fit and comfort is exceptional.",
-//   "I got my entire family’s outfits stitched here, and everyone was happy!",
-//   "Kachin's Tailor’s craftsmanship is unmatched. My suit fits like a dream.",
-// ];
-
-// // Generate a random review
-// const randomReview = reviews[Math.floor(Math.random() * reviews.length)];
-// document.getElementById("reviewBox").value = randomReview;
-
-// // Auto-copy on load
-// navigator.clipboard.writeText(randomReview);
-
-// function copyReview() {
-//   navigator.clipboard.writeText(randomReview).then(() => {
-//     alert("✅ Review copied to clipboard!");
-//   });
-// }
-
-// function openShop() {
-//   window.open(shopMapURL, "_blank");
-// }
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  // Additional initialization if needed
+});
