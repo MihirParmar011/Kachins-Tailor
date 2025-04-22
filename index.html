@@ -5,62 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kachins Tailor - Review Generator</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <img src="https://i.ibb.co/0jQ6Z1J/tailor-logo.png" alt="Kachins Tailor Logo" class="logo">
+      <div class="logo-container">
+        <img src="https://i.ibb.co/0jQ6Z1J/tailor-logo.png" alt="Kachins Tailor Logo" class="logo">
+      </div>
       <h1>Kachins Tailor</h1>
       <p class="owner">Owned by: <span>Mr. Chirag Parmar</span></p>
       <div class="contact">
-        <a href="tel:+919725317231"><i class="fas fa-phone-alt"></i> +91 97253 17231</a>
-        <a href="https://maps.app.goo.gl/NxKxb386GzYMjWkh6" target="_blank"><i class="fas fa-map-marker-alt"></i> Shop Location</a>
+        <a href="tel:+919725317231" class="contact-btn"><i class="fas fa-phone-alt"></i> +91 97253 17231</a>
+        <a href="https://maps.app.goo.gl/NxKxb386GzYMjWkh6" target="_blank" class="contact-btn"><i class="fas fa-map-marker-alt"></i> Shop Location</a>
       </div>
     </div>
 
-    <div class="about-section">
-      <h3>About Kachins Tailor</h3>
-      <p>Kachins Tailor is a premium tailoring service known for its exceptional craftsmanship, perfect fitting, and attention to detail. With years of experience in the industry, we specialize in custom tailoring for men and women, offering a wide range of fabrics and styles to choose from.</p>
-    </div>
-
-    <div class="hours-section">
-      <h3>Business Hours</h3>
-      <ul>
-        <li><span>Monday - Friday:</span> <span>10:00 AM - 8:00 PM</span></li>
-        <li><span>Saturday:</span> <span>10:00 AM - 6:00 PM</span></li>
-        <li><span>Sunday:</span> <span>Closed</span></li>
-      </ul>
-    </div>
-
-    <div class="features">
-      <div class="feature">
-        <i class="fas fa-ruler-combined"></i>
-        <h3>Perfect Fit</h3>
-        <p>Custom measurements for flawless fitting</p>
+    <div class="content">
+      <div class="about-section card">
+        <h3><i class="fas fa-info-circle"></i> About Kachins Tailor</h3>
+        <p>Kachins Tailor is a premium tailoring service known for its exceptional craftsmanship, perfect fitting, and attention to detail. With years of experience in the industry, we specialize in custom tailoring for men and women, offering a wide range of fabrics and styles to choose from.</p>
       </div>
-      <div class="feature">
-        <i class="fas fa-clock"></i>
-        <h3>Fast Turnaround</h3>
-        <p>Timely delivery guaranteed</p>
+
+      <div class="features">
+        <div class="feature card animate__animated animate__fadeInUp">
+          <div class="feature-icon">
+            <i class="fas fa-ruler-combined"></i>
+          </div>
+          <h3>Perfect Fit</h3>
+          <p>Custom measurements for flawless fitting every time</p>
+        </div>
+        <div class="feature card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Fast Turnaround</h3>
+          <p>Timely delivery with quality guaranteed</p>
+        </div>
+        <div class="feature card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="feature-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Quality Fabric</h3>
+          <p>Premium materials selected for lasting wear</p>
+        </div>
       </div>
-      <div class="feature">
-        <i class="fas fa-award"></i>
-        <h3>Quality Fabric</h3>
-        <p>Premium materials for lasting wear</p>
+
+      <div class="hours-section card">
+        <h3><i class="fas fa-clock"></i> Business Hours</h3>
+        <ul>
+          <li><span>Monday - Friday:</span> <span>10:00 AM - 8:00 PM</span></li>
+          <li><span>Saturday:</span> <span>10:00 AM - 6:00 PM</span></li>
+          <li><span>Sunday:</span> <span class="closed">Closed</span></li>
+        </ul>
       </div>
-    </div>
 
-    <div class="review-box">
-      <h2><i class="fas fa-star"></i> Leave Us a Review</h2>
-      <p class="subtext">We'd love to hear about your experience with Kachins Tailor. Click the button below to leave a review on Google Maps.</p>
+      <div class="review-box card">
+        <h2><i class="fas fa-star"></i> Leave Us a Review</h2>
+        <p class="subtext">We value your feedback! Share your experience with Kachins Tailor to help us improve and serve you better.</p>
 
-      <textarea id="reviewBox" readonly></textarea>
+        <div class="review-container">
+          <textarea id="reviewBox" readonly></textarea>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
 
-      <div class="btn-group">
-        <button onclick="copyReview()"><i class="far fa-copy"></i> Copy Review</button>
-        <button onclick="openShop()"><i class="fab fa-google"></i> Add Review on Maps</button>
+        <div class="btn-group">
+          <button onclick="copyReview()" class="btn-primary"><i class="far fa-copy"></i> Copy Review</button>
+          <button onclick="openShop()" class="btn-secondary"><i class="fab fa-google"></i> Add Review on Maps</button>
+        </div>
       </div>
     </div>
   </div>
